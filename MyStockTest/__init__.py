@@ -2,6 +2,8 @@ import baostock as bs
 import pandas as pd
 #                                                每笔交易数量  差价设定
 def main(stock, start_date, end_date, res, cnt, deal_cnt , threshold):
+    print(str(stock)+ " " + str(start_date)  + " " + str(end_date) + " " + str(res) + " " + str(cnt)  + " " + str(deal_cnt) +" " +
+          str(threshold) )
     lg = bs.login(user_id="anonymous", password="123456")
     fields = "date,open,high,low" #,close,volume"
 
@@ -17,24 +19,32 @@ def main(stock, start_date, end_date, res, cnt, deal_cnt , threshold):
     #res = 100000.0
     #cnt = 50000
     jin = 0
+    print(data_list[1:10])
     chu = 0
-
-    print(str(res) + " " + str(type(res)))
-
+    del_cnt = 0
+    success = 0
+    print()
     for i in data_list:
+        del_cnt += 1
         open = float(i[1])
         high = float(i[2])
         low = float(i[3])
-        if(open + threshold < high and cnt > deal_cnt and res > (open + threshold) * deal_cnt ):
+        ii = 1
+        jj = 1
+
+        if(open + threshold <= high and cnt >= deal_cnt): # and res > (open + threshold) * deal_cnt ):
             chu += 1
+            ii = 0
             cnt -= deal_cnt
             res += (open + threshold) * deal_cnt
-        elif(open - threshold > low and res > (open - threshold) * deal_cnt ):
+        if(open - threshold >= low and res >= (open - threshold) * deal_cnt ):
             jin += 1
+            jj = 0
             cnt += deal_cnt
             res -= (open - threshold) * deal_cnt
 
-    print(str(res) + " " + str(cnt) + " " + str(jin) + " " + str(chu))
+        if(ii == 1 and jj == 1): success += 1
+    print(str(res) + " " + str(cnt) + " " + str(del_cnt) + " " + str(jin) + " " + str(chu) + " " + str(success))
 
     # result = pd.DataFrame(data_list,columns=df_bs.fields)
     # result.close = result.close.astype('float64')
@@ -51,4 +61,4 @@ def main(stock, start_date, end_date, res, cnt, deal_cnt , threshold):
     bs.logout('anonymous')
 
 if __name__ == "__main__":
-    main("sh.601288", "2018-01-01", "2021-01-01",100000.0,50000,1000,0.01)
+    main("sh.601288", "2018-05-01", "2021-01-01",123456789.0,1000,1000,0.01)

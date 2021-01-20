@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="da5d9975-b883-4ed8-a0d2-2aaf4489d102" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyStockTest/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyStockTest/__init__.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,9 +100,9 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.anaconda" />
-      <item itemvalue="Python.__init__" />
       <item itemvalue="Python.__init__ (1)" />
+      <item itemvalue="Python.__init__" />
+      <item itemvalue="Python.anaconda" />
     </list>
     <recent_temporary>
       <list>
@@ -133,5 +132,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

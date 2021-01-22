@@ -218,7 +218,7 @@ def ts_data_sh_h():
     """
 
 # 设置token
-token = '' # 输入你的token
+token = '2356036d2a6c009eb07b649eee0bb123226b24251eedea2235a6de1f' # 输入你的token
 pro = ts.pro_api(token) # 初始化pro接口
 
 def ts_data_pro_daily():

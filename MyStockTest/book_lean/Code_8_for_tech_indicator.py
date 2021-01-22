@@ -14,7 +14,7 @@ import matplotlib.pyplot as plt
 import pandas_datareader.data as web
 import pandas as pd
 import datetime, time
-import talib
+#import talib
 import mpl_finance as mpf #替换 import matplotlib.finance as mpf
 import matplotlib.gridspec as gridspec#分割子图
 

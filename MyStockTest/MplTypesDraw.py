@@ -1,11 +1,10 @@
-import DefTypesPool
+from MyStockTest import DefTypesPool
 import numpy as np
-import matplotlib.pyplot as plt
+
 
 class MplTypesDraw():
+    mpl = DefTypesPool.DeftypePool
 
-    mpl = DefTypesPool()
-    plt
     @mpl.route_types(u"line")
     def line_plot(self, df_index, df_dat, graph):
         for key, val in df_dat.items():

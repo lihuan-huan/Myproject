@@ -951,9 +951,9 @@ class MultiGraphIf(MplTypesDraw):
                 label.set_visible(False)
 
 
-if  __name__ == '__main__':
-
-    df_stockload = pro_daily_stock('000651.SZ', '20180601', '20190601')
+#if  __name__ == '__main__':
+def visual_stock(stock_id, start_date, end_date):
+    df_stockload = pro_daily_stock(stock_id, start_date, end_date)
     #df_stockload = bs_k_data_stock("sz.000651", '2018-06-01', '2019-06-01') # 采用未复权数据
     print(df_stockload.head(10))
     """
@@ -993,17 +993,17 @@ if  __name__ == '__main__':
         draw_kweek_chart(df_stockload.copy(deep=True))  # 重采样周K线图形
     if False:
         draw_fibonacci_chart(df_stockload.copy(deep=True))  # 黄金分割率绘制支撑与阻力线
-    # talib
-    if False:
-        draw_tasma_chart(df_stockload.copy(deep=True))  # talib SMA 普通移动平均线
-    if False:
-        draw_tamacd_chart(df_stockload.copy(deep=True))  # talib MACD
-    if False:
-        draw_takdj_chart(df_stockload.copy(deep=True))  # talib KDJ
-    if False:
-        draw_takpattern_annotate(df_stockload.copy(deep=True))  # talib K-line pattern标注
-    if False:
-        talib_speed_example() # 对比效率上的差别
+    # # talib
+    # if False:
+    #     draw_tasma_chart(df_stockload.copy(deep=True))  # talib SMA 普通移动平均线
+    # if False:
+    #     draw_tamacd_chart(df_stockload.copy(deep=True))  # talib MACD
+    # if False:
+    #     draw_takdj_chart(df_stockload.copy(deep=True))  # talib KDJ
+    # if False:
+    #     draw_takpattern_annotate(df_stockload.copy(deep=True))  # talib K-line pattern标注
+    # if False:
+    #     talib_speed_example() # 对比效率上的差别
 
     if True: # 自定义显示界面
 
@@ -1054,4 +1054,7 @@ if  __name__ == '__main__':
 
         draw_stock = MultiGraphIf(**layout_dict)
         draw_stock.graph_run(df_stockload, **subplots_dict)
+
+
+
 

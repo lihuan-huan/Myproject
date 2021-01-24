@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da5d9975-b883-4ed8-a0d2-2aaf4489d102" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/Myproject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Myproject.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyStockTest/book_lean/Code_8_for_tech_indicator.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyStockTest/book_lean/Code_8_for_tech_indicator.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +30,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -36,7 +38,7 @@
       <recent name="G:\Myproject\MyStockTest\book_lean" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Code_8_for_tech_indicator">
+  <component name="RunManager" selected="Python.__init__">
     <configuration name="Code_5_for_matplotlib_tool" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Myproject" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -79,7 +81,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="MplTypesDraw" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="__init__" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Myproject" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -87,11 +89,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MyStockTest" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MyStockTest/book_lean" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MyStockTest/MplTypesDraw.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MyStockTest/book_lean/__init__.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -142,7 +144,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="json_utils" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="visual_stock" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Myproject" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -150,11 +152,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MyStockTest" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MyStockTest/test" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MyStockTest/json_utils.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MyStockTest/test/visual_stock.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -164,20 +166,20 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python.anaconda" />
       <item itemvalue="Python.Code_5_for_matplotlib_tool" />
       <item itemvalue="Python.Code_8_for_tech_indicator" />
-      <item itemvalue="Python.MplTypesDraw" />
-      <item itemvalue="Python.anaconda" />
       <item itemvalue="Python.draw_kline_chart" />
-      <item itemvalue="Python.json_utils" />
+      <item itemvalue="Python.visual_stock" />
+      <item itemvalue="Python.__init__" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.__init__" />
+        <item itemvalue="Python.visual_stock" />
         <item itemvalue="Python.Code_8_for_tech_indicator" />
         <item itemvalue="Python.Code_5_for_matplotlib_tool" />
         <item itemvalue="Python.draw_kline_chart" />
-        <item itemvalue="Python.MplTypesDraw" />
-        <item itemvalue="Python.json_utils" />
       </list>
     </recent_temporary>
   </component>

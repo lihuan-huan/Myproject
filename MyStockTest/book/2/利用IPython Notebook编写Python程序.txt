@@ -1,0 +1,7 @@
+stocks = get_industry_stocks('C36')   #获得汽车制造业指数的所有股票代码
+stocks
+
+import pandas as pd
+#从2015年4月16日到当前，平安银行、中国宝安两只股票的限售解禁股数据
+dataframe1 = get_locked_shares(stock_list=['000001.XSHE', '000009.XSHE'], start_date='2015-4-16', forward_count=1600)
+dataframe1

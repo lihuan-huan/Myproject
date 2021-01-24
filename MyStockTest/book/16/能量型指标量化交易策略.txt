@@ -1,0 +1,41 @@
+# 导入函数库
+import jqdata
+from jqlib.technical_analysis import *
+# 初始化函数，设定基准等等
+def initialize(context):
+     # 定义一个全局变量, 保存要操作的股票
+     # 000538(股票:云南白药)
+    g.security = '000538.XSHE'
+    # 设定沪深300作为基准
+    set_benchmark('000300.XSHG')
+    # 开启动态复权模式(真实价格)
+    set_option('use_real_price', True)
+    # 输出内容到日志 log.info()
+    log.info('初始函数开始运行且全局只运行一次')
+        ### 股票相关设定 ###
+    # 股票类每笔交易时的手续费是：买入时佣金万分之三，卖出时佣金万分之三加千分之一印花税, 每笔交易佣金最低扣5块钱
+    set_order_cost(OrderCost(close_tax=0.001, open_commission=0.0003, close_commission=0.0003, min_commission=5), type='stock')
+
+def handle_data(context, data):
+    #获取初始化中要操作的股票
+    security = g.security
+    #调用情绪指标BRAR，并获取股票的情绪指标BRAR的BR和AR的值
+    BR1,AR1 = BRAR(security, check_date=context.current_dt, N=26)
+    #调用带状能量线CR，并获取股票的带状能量线CR的CR的值
+    CR1, MA1, MA2, MA3, MA4 = CR(security, check_date=context.current_dt, N=26, M1=10, M2=20, M3=40, M4=62)
+    #调用成交量变异率VR，并获取股票的成交量变异率VR的VR的值
+    VR1,MAVR1 = VR(security, check_date=context.current_dt, N=26, M=6)
+    # 取得当前的现金
+    cash = context.portfolio.cash
+    # 如果当前有余额，并且AR<40、BR<40、BR<AR、CR<40、VR<40
+    if AR1 < 40 and BR1 < 40 and BR1 < AR1 and  CR1 < 40  and  VR1 < 40 :
+        # 用所有 cash 买入股票
+        order_value(security, cash)
+        # 记录这次买入
+        log.info("买入股票 %s" % (security))
+    # 如果AR>180、BR>400、CR>400、VR>450，并且目前有头寸
+    elif AR1 > 180 and BR1 > 400 and  CR1 > 400  and  VR1 > 450  and context.portfolio.positions[security].closeable_amount> 0:
+        # 全部卖出
+        order_target(security, 0)
+        # 记录这次卖出
+        log.info("卖出股票 %s" % (security))

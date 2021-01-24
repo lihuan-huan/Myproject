@@ -1,0 +1,9 @@
+print("第一个实例：逐个显示'Python'中的每个字母！")
+for letter in "Python":     # 第一个实例
+   print ("当前字母 :", letter)
+print()
+print("第二个实例:")
+fruits = "banana", "apple", "mango"
+for fruit in fruits:        # 第二个实例
+   print ("当前水果 :", fruit)
+print ("输出完成，再见!")

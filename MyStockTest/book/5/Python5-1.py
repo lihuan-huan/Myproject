@@ -1,0 +1,11 @@
+import math   #导入math模块
+print("-12的绝对值：",abs(-12))
+print("4.8的上入整数：",math.ceil(4.8))
+print("4.8的下入整数：",math.floor(4.8))
+print("4.8的四舍五入整数：",round(4.8))
+print("e的3次幂：",math.exp(3))
+print("以10为基数的1000的对数：",math.log10(1000))
+print("5的3次方：",math.pow(5,3))
+print("16的平方根：",math.sqrt(16))
+print("3、6、13、18数中的最大数",max(3,6,13,18))
+print("3、6、13、18数中的最小数",min(3,6,13,18))

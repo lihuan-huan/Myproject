@@ -14,7 +14,7 @@ import pandas_datareader.data as web
 import pandas as pd
 import numpy as np
 import datetime
-import talib
+#import talib
 import random
 import matplotlib.pyplot as plt
 import mpl_finance as mpf #替换 import matplotlib.finance as mpf
@@ -498,30 +498,30 @@ if  __name__ == '__main__':
                                    'xticklabels': '%Y-%m-%d'
                                    },
                      }
-    if False:
-        #print(get_ndays_signal(df_stockload.copy(deep=True)))  # 海龟策略-唐奇安通道突破(N日突破) 买入/卖出信号
+    if True:
+        print(get_ndays_signal(df_stockload.copy(deep=True)))  # 海龟策略-唐奇安通道突破(N日突破) 买入/卖出信号
         draw_ndays_annotate(get_ndays_signal(df_stockload.copy(deep=True)))  # 海龟策略-唐奇安通道突破(N日突破) 买入/卖出信号
 
         draw_stock = MultiTraceIf(**layout_dict)
         draw_stock.graph_run(get_ndays_signal(df_stockload.copy(deep=True)), **subplots_dict)
 
-    if False:
-        #draw_atr_chart(df_stockload.copy(deep=True))
-        #get_ndays_atr_signal(df_stockload.copy(deep=True))
-        #draw_trade_chart(get_ndays_atr_signal(df_stockload.copy(deep=True))) # 交易获利/亏损区间可视化
+    if True:
+        draw_atr_chart(df_stockload.copy(deep=True))
+        get_ndays_atr_signal(df_stockload.copy(deep=True))
+        draw_trade_chart(get_ndays_atr_signal(df_stockload.copy(deep=True))) # 交易获利/亏损区间可视化
         draw_stock = MultiTraceIf(**layout_dict)
         draw_stock.graph_run(get_ndays_atr_signal(df_stockload.copy(deep=True)), **subplots_dict)
 
     if True:
         enum_optimize_para(df_stockload.copy(deep=True))
-        #draw_fx_square()
-        #print(cal_integral_mc())
-        #draw_integral_mc()
-        #print(cal_ndayavg_mc_frame()) # [[10, 9, 2.3, 1.1] ...... [14, 7, 2.1, 1.2], [29, 6, 2.3, 1.3]]
+        draw_fx_square()
+        print(cal_integral_mc())
+        draw_integral_mc()
+        print(cal_ndayavg_mc_frame()) # [[10, 9, 2.3, 1.1] ...... [14, 7, 2.1, 1.2], [29, 6, 2.3, 1.3]]
         cal_ndayavg_mc(df_stockload.copy(deep=True), 200)
 
-    if False:
-        #verify_kelly_profit()
+    if True:
+        verify_kelly_profit()
         draw_trade_chart(get_ndays_atr_signal(df_stockload.copy(deep=True), N1=10, N2=9, n_loss=2.5, n_win=1.2))  # 交易获利/亏损区间可视化
         #loss count:5 and win count:7, Pwin:0.58
         #loss profit:0.04 and win profit:0.08

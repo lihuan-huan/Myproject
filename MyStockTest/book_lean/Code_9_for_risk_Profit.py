@@ -99,7 +99,7 @@ def draw_trade_chart(stock_dat):
                                       'jdval': stock_dat.Close,
                                       'va': 'top',
                                       'xy_y': 'Close',
-                                      'xytext': (0,stock_dat['Close'].mean()),
+                                      'xytext': (0, stock_dat['Close'].mean()),
                                       'fontsize': 8,
                                       'arrow': dict(facecolor='yellow', shrink=0.1)
                                       }

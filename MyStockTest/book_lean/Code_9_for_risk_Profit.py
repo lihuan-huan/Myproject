@@ -14,7 +14,7 @@ import matplotlib.pyplot as plt
 import pandas_datareader.data as web
 import pandas as pd
 import datetime
-import talib
+#import talib
 import time
 import sys
 import mpl_finance as mpf #替换 import matplotlib.finance as mpf
@@ -40,8 +40,8 @@ app = MplVisualIf()
 def get_trade_signal(stock_dat):
 
     df_csvload_trade = pd.read_csv('GLDQ000651.csv', index_col=None, parse_dates=[2, 3], encoding='gb2312')
-    # print(df_csvload_trade)
-    """
+
+    """ #print(df_csvload_trade.head(10))
             Code  Name    Buy-Time  Sell-Time   Number  Buy-Price Sell-Price
     0  000651.SZ  格力电器  20180601   20180613    1000     46.71     49.28
     1  000651.SZ  格力电器  20180706   20180801    1000     43.19     42.45
@@ -50,9 +50,9 @@ def get_trade_signal(stock_dat):
     4  000651.SZ  格力电器  20190327   20190422    1000     45.08     61.14
     5  000651.SZ  格力电器  20190514   20190530    1000     53.25     52.94
     """
-    stock_dat = stock_dat.assign(Signal = np.nan)
+    stock_dat = stock_dat.assign(Signal=np.nan)
     stock_dat.loc[df_csvload_trade["Buy-Time"], 'Signal'] = 1
-    stock_dat.loc[df_csvload_trade["Sell-Time"],'Signal'] = -1
+    stock_dat.loc[df_csvload_trade["Sell-Time"], 'Signal'] = -1
     """
     for kl_index, today in df_csvload_trade.iterrows():
         stock_dat.iloc[stock_dat.index.get_loc(today["Buy-Time"]),stock_dat.columns.get_indexer(['Signal'])] = 1
@@ -83,8 +83,8 @@ def get_trade_signal(stock_dat):
     2019-04-22  64.29  60.88  63.73  61.14  1.27e+06    -1.0
     2019-05-30  53.79  52.63  53.64  52.94  4.55e+05    -1.0
     """
-    stock_dat['Signal'].fillna(method = 'ffill', inplace = True) # 与前面元素值保持一致
-    stock_dat['Signal'].fillna(value = -1, inplace = True) # 序列最前面几个NaN值用-1填充
+    stock_dat['Signal'].fillna(method='ffill', inplace=True)  # 与前面元素值保持一致
+    stock_dat['Signal'].fillna(value=-1, inplace=True)  # 序列最前面几个NaN值用-1填充
 
     return stock_dat
 
@@ -690,8 +690,8 @@ if  __name__ == '__main__':
     print(df_stockload.head())
 
     if True:
-        print(get_trade_signal(df_stockload.copy(deep=True)))
-        """
+        """print(get_trade_signal(df_stockload.copy(deep=True)))
+        
                       High    Low   Open  Close    Volume  Signal
         Date                                                    
         2018-06-01  47.30  46.26  47.30  46.58  4.96e+05     1.0
@@ -708,8 +708,8 @@ if  __name__ == '__main__':
         
         [238 rows x 6 columns]
         """
-        #draw_trade_chart(get_trade_signal(df_stockload.copy(deep=True)))  # 交易获利/亏损区间可视化
-        #log_trade_info(get_trade_signal(df_stockload.copy(deep=True))) # 交易概览信息的统计
+        draw_trade_chart(get_trade_signal(df_stockload.copy(deep=True)))  # 交易获利/亏损区间可视化
+        log_trade_info(get_trade_signal(df_stockload.copy(deep=True))) # 交易概览信息的统计
         draw_absolute_profit(get_trade_signal(df_stockload.copy(deep=True))) # 绝对收益—资金的度量
         draw_relative_profit(get_trade_signal(df_stockload.copy(deep=True)))  # 相对收益—策略VS基准
         draw_closemax_risk(get_trade_signal(df_stockload.copy(deep=True)))  # 度量策略最大风险回撤——收盘价最大回撤
